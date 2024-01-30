@@ -6,3 +6,4 @@
 
 *How to use*
 npm start -> "compiles" and runs index.ts
+it only compiles thing in src folder (include: [src....])
