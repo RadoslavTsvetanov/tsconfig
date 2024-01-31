@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint . --ext .ts",
-    "start": "ts-node src/index2.ts",
+    "start": "ts-node src/index.ts",
     "test_backend": "nodemon --exec ts-node src/backend/index.ts"
   },
   "keywords": [],
