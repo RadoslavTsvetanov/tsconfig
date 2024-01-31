@@ -1,8 +1,8 @@
 
-const ApiClient = require("../src/index2")
-const supertest = require('supertest')
+import {ApiClient} from "../src/index2"
+import supertest  from 'supertest'
 const serverUrl = 'http://localhost:3000'; // Adjust the URL based on your server configuration
-
+//! if tests fail first check if backend is running
 describe('ApiClient', () => {
   it('should make a successful static GET request', async () => {
     const app = supertest(serverUrl);
@@ -12,8 +12,8 @@ describe('ApiClient', () => {
 
     const result = await ApiClient.staticGetRequest(`${serverUrl}/get/pipi`, undefined);
 
-    expect(result.data).toEqual(response.body);
-    expect(result.status).toBe(response.status);
+    expect(result.data).toEqual("GOT IT");
+    expect(result.status).toBe(200);
     expect(result.err).toBeUndefined();
   });
 
@@ -25,8 +25,8 @@ describe('ApiClient', () => {
 
     const result = await ApiClient.staticPostRequest(`${serverUrl}/update`, { pipi: 4 }, undefined);
 
-    expect(result.data).toEqual(response.body);
-    expect(result.status).toBe(response.status);
+    expect(result.data).toEqual("UPDATED");
+    expect(result.status).toBe(200);
     expect(result.err).toBeUndefined();
   });
 

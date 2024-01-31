@@ -6,13 +6,13 @@ const port = 3000;
 // GET endpoint
 app.get('/get/:param', (req: any, res: any) => {
   console.log(req.params.param)
-  res.send('GOT IT');
+  res.status(200).send('GOT IT');
 });
 
 // UPDATE endpoint
 app.post('/update', (req: any, res: any) => {
   console.log(req.data)
-  res.send('UPDATED');
+  res.status(200).send('UPDATED');
 });
 
 app.listen(port, () => {

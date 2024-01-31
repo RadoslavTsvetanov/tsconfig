@@ -15,7 +15,7 @@ enum REQUEST_TYPE {
   GET = 'GET',
 }
 
-class ApiClient {
+export class ApiClient {
   private baseUrl: string;
 
   constructor(baseUrl: string) {
@@ -104,4 +104,4 @@ const apiClient = new ApiClient("http://localhost:3000");
 apiClient.getRequest("get/pipi",{},undefined).then(pipi => {console.log(pipi)})
 apiClient.postRequest("update",{pipi:4},undefined).then(pipi => {console.log(pipi)})
 
-module.exports = {};
+
